@@ -12,17 +12,17 @@ Before installing, download and install NodeJs from NodeJs Official Page.
 
 - To Run Client
 
-1.Open Terminal
-2.Go to /client folder
-4.Run in terminal: ```npm install```
-5.Run ```npm start``` for a dev server.
+1. Open Terminal
+2. Go to /client folder
+4. Run in terminal: ```npm install```
+5. Run ```npm start``` for a dev server.
 
 - To Run Server
 
-1.Open Terminal
-2.Go to /server folder
-3.Run in terminal: npm install
-4.Run node app.js
+1. Open Terminal
+2. Go to /server folder
+3. Run in terminal: npm install
+4. Run node app.js
 
 ### What's included
 
