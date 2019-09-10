@@ -76,7 +76,6 @@ class App extends React.Component {
     // if (navigator.platform.indexOf("Win") > -1) {
     //   const ps = new PerfectScrollbar(this.refs.mainPanel);
     // }
-
     if (localStorage.getItem("userToken")) {
       this.setState({
         isLogged: !this.state.isLogged
@@ -87,11 +86,7 @@ class App extends React.Component {
       });
     }
     window.addEventListener("resize", this.resizeFunction);
-
     axios.defaults.withCredentials = true;
-
-    // console.log(document.cookie);
-
   }
 
   componentDidUpdate(e) {
@@ -110,7 +105,6 @@ class App extends React.Component {
 
   register(e) {
     e.preventDefault();
-
     const user = {
       user_name: this.state.user_name,
       user_lastname: this.state.user_lastname,
@@ -119,11 +113,9 @@ class App extends React.Component {
       user_email: this.state.user_email,
       user_password: this.state.user_password
     };
-
     createUser(user)
       .then(res => {
         console.log("Usuario registrado", res);
-        // this.showComponent();
       })
       .catch(error => {
         console.log("Error", error);
@@ -159,13 +151,16 @@ class App extends React.Component {
   login(e) {
     e.preventDefault();
 
+    // USUARIOS REGISTRADOS EN CONNECTA2 EN LA TABLA WEBUSUARIO
+
+    // USUARIO DE PRUEBA: INSITE01 / 3215151N 
+    // USUARIO ADMNISTRADOR: valentina / 123
+
     const user = {
       user_username: this.state.user_username,
       user_password: this.state.user_password
     };
-
     console.log(user);
-
     if (this.state.user_username === "" || this.state.user_password === "") {
       alert("Please fill all the fields");
     } else {
@@ -178,7 +173,6 @@ class App extends React.Component {
       }).catch(error => {
         console.log(error.response.data.message);
         alert(error.response.data.message);
-
       })
     }
   }
@@ -196,7 +190,7 @@ class App extends React.Component {
 
       const history = createBrowserHistory();
       history.push({ pathname: '/' });
-      // window.location.reload();
+      window.location.reload();
     }).catch(error =>{
       console.log(error.response.data.message);
       alert(error.response.data.message);
