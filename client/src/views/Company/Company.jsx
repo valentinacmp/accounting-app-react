@@ -9,18 +9,7 @@ import CreateCompany from "components/Company/CreateCompany/CreateCompany";
 import { serverUrl } from "variables/general";
 
 const styles = theme => ({
-  root: {
-    width: "100%",
-    marginTop: theme.spacing(3),
-    overflowX: "auto"
-  },
-  typo: {
-    paddingLeft: "10%",
-    position: "relative"
-  },
-  formControl:{
-    width: "100%",
-  }
+
 });
 
 class Company extends React.Component {
@@ -42,12 +31,8 @@ class Company extends React.Component {
         withCredentials: false
       })
       .then(res => {
-        // const db = res.data.databases.filter(country =>
-        //   country.Database.startsWith("emp")
-        // );
         const db = res.data.databases;
         this.setState({ db });
-        // console.log("Databases", db);
       })
       .catch(error => {
         console.log(error);
@@ -81,7 +66,6 @@ class Company extends React.Component {
   };
 
   render() {
-    //const { classes } = this.props;
 
     return (
       <div>

@@ -15,8 +15,6 @@ import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
 // @material-ui/icons
 import Save from "@material-ui/icons/Save";
 import Cancel from "@material-ui/icons/Cancel";
-//import Search from "@material-ui/icons/Search";
-//import Button from "components/CustomButtons/Button.jsx";
 
 //Components
 import UserCompany from "components/Users/UserCompany";
@@ -24,7 +22,6 @@ import NewUserCompany from "components/Users/NewUserCompany";
 import { createUser } from "services/user/usercompany";
 
 import axios from "axios";
-// import Promise from "promise";
 import { serverUrl } from "variables/general";
 
 const styles = {
@@ -86,9 +83,9 @@ class Users extends React.Component {
       alert("Please fill all the fields");
     } else {
       createUser(register).then(res => {
-        alert('Usuario registrado!')
+        alert('Usuario registrado!');
       }).catch(error => {
-        alert('Ya existe el usuario en la base de datos')
+        alert('Ya existe el usuario en la base de datos');
         // alert(error.response.data.message)
       })
     }

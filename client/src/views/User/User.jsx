@@ -18,13 +18,9 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Delete from "@material-ui/icons/Delete";
 import Edit from "@material-ui/icons/Edit";
 
-// import { ValidatorForm } from 'react-material-ui-form-validator';
-//Components
-// import Users from "components/Users/Users";
 
 import axios from "axios";
-// import { baseUrl } from "variables/general";
-import { confirmAlert } from 'react-confirm-alert'; // Import
+import { confirmAlert } from 'react-confirm-alert';
 import UserDialog from "../../components/Dialogs/UserDialog/UserDialog";
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { userAcc, updateUserAcc, deleteUserAcc, createUserAcc } from "../../services/user/useracc";
@@ -149,7 +145,6 @@ class User extends React.Component {
 
   handleClose = value => {
     this.setState({ value, open: false });
-    // window.location.reload();
   };
 
   convertDate = (date) => {
@@ -203,7 +198,6 @@ class User extends React.Component {
   };
 
   deleteItem(selected) {
-    // const filter = this.state.users.filter(item => item.user.usuario_nombre === data.user.usuario_nombre);
     const filter = this.state.array.filter(item => item.user.usuario_nombre === selected.user.usuario_nombre);
 
     console.log(filter);
@@ -389,7 +383,6 @@ class User extends React.Component {
   }
 
   getCompanies = (newArr) => {
-    // console.log(newArr);
     this.setState({
       companies: newArr
     });

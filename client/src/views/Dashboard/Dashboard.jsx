@@ -24,7 +24,6 @@ class Dashboard extends React.Component {
     return (
       <div>
         <Card
-          // style={{ width: "22rem", transform: "translate(130%, 10%)" }}
           style={{ width: "30%", margin: '80px 370px', textAlign: 'center' }}
           plain
           color="transparent"

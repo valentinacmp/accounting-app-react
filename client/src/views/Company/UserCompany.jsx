@@ -15,10 +15,7 @@ import { createCompany, createSucursal } from "services/company/usercompany";
 import Sucursal from "components/Company/UserCompany/Sucursal";
 
 
-// import axios from "axios";
-// import Promise from "promise";
-
-const styles = theme => ({
+const styles = () => ({
   root: {
     width: "100%"
   },
@@ -70,27 +67,25 @@ class UserCompany extends React.Component {
   saveCompany(e) {
     e.preventDefault();
 
-    const register ={
+    const register = {
       company_name: this.state.company_name,
       company_rif: this.state.company_rif,
       company_days: this.state.company_days,
       company_start_date: this.state.company_start_date,
       company_end_date: this.state.company_end_date,
       company_status: this.state.company_status,
-      // sucursal_name: this.state.sucursal_name,
-      // sucursal: this.state.sucursal,
     }
 
-    console.log(register)
+    console.log(register);
 
     if (this.state.company_name === "" || this.state.company_rif === "" || this.state.company_days === "") {
       alert("Please fill all the fields");
     } else {
       createCompany(register).then(res => {
-        alert('Empresa creada!')
+        alert('Empresa creada!');
        }).catch(error =>{
-         alert('Error', error.response.data)
-       })
+        alert('Error', error.response.data);
+      })
     }
   }
 
@@ -105,34 +100,26 @@ class UserCompany extends React.Component {
       user_company: this.state.user_company
     }
 
-    console.log(registerSuc)
+    console.log(registerSuc);
 
     if (this.state.sucursal_name === "" || this.state.sucursal === "" || this.state.user_company === "") {
       alert("Please fill all the fields");
     } else {
       createSucursal(registerSuc).then(res => {
-        alert('Sucursal creada!')
+        alert('Sucursal creada!');
       }).catch(error => {
-        // alert('Error', error.response.data)
         if(error.response.data === null){
-          alert('Error: Ya existe')
+          alert('Error: Ya existe');
         }else {
-          alert('Error', error.response.data)
+          alert('Error', error.response.data);
         }
       })
     }
   }
 
-  myFunction(company_code){
-    console.log(company_code)
-    // alert(` Users Component: RIF -> ${company_code}`);
+  myFunction(company_code) {
     this.setState({ user_company: company_code});
   }
-
-  // myFunction = (company_code) => {
-  //   console.log(company_code)
-  // };
-
 
   render() {
     // const { classes } = this.props;

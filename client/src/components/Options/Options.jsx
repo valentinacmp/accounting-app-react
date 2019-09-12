@@ -6,16 +6,11 @@ import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 
 //material-dashboard components
-import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
 
 // @material-ui/icons
 import Save from "@material-ui/icons/Save";
-import Cancel from "@material-ui/icons/Cancel";
-import List from "@material-ui/icons/List";
 
 
 const styles = theme => ({

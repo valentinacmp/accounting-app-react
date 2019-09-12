@@ -102,7 +102,8 @@ class BudgetDialog extends React.Component {
   };
 
   isSelected = id => { 
-    this.state.selected.indexOf(id) !== -1
+    const selected = this.state.selected.indexOf(id);
+    return selected !== -1
   };
 
   handleRowClick = (event, data) => {

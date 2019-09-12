@@ -71,9 +71,9 @@ class Assign extends React.Component {
       alert("Please fill all the fields");
     } else {
       assignUser(assign).then(res => {
-        alert('Bases de datos asignadas!')
+        alert('Bases de datos asignadas!');
       }).catch(error => {
-        alert('Ya el usuario tiene 5 bases de datos asignadas')
+        alert('Ya el usuario tiene 5 bases de datos asignadas');
         // alert(error.response.data.message)
       })
     }

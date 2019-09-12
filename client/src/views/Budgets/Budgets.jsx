@@ -91,10 +91,9 @@ class Budgets extends React.Component {
     }
 
     getBudgets(data).then(result =>{
-      // console.log(result);
       this.setState({
         budgets: result
-      })
+      });
 
       getBudgetsCC(data).then(res => {
         const groupBy = key => array =>
@@ -112,7 +111,7 @@ class Budgets extends React.Component {
         // console.log(partidas);
         this.setState({
           newBudgets: partidas
-        })
+        });
 
       }).catch(error => console.log(error))
     })
@@ -131,7 +130,6 @@ class Budgets extends React.Component {
 
   onHandleChange = name => e => {
     this.setState({ [name]: e.target.checked });
-    // console.log(name);
   };
 
   handleClickOpen = () => {
@@ -142,7 +140,6 @@ class Budgets extends React.Component {
 
   handleClose = () => {
     this.setState({ open: false });
-    // console.log(this.state.presupuesto_total);
   };
 
   handleClickOpenCC = () => {
@@ -202,8 +199,7 @@ class Budgets extends React.Component {
 
         const budget_cc = this.state.partidas_presupuestarias;
 
-        budget_cc.map(budgets => {
-          // console.log(budgets);
+          budget_cc.map(budgets => {
           const data_cc = {
             databases: this.state.database,
             partidas_presupuestarias_id: result.insertId,
@@ -216,12 +212,9 @@ class Budgets extends React.Component {
             partidas_presupuestarias_cc_dif: budgets.partidas_presupuestarias_cc_dif
           }
 
-          createBudgetCC(data_cc).then(res => {
+          return createBudgetCC(data_cc).then(res => {
             console.log(res);
-            // console.log(Object.assign(data, data_cc))
           }).catch(error => {console.log(error)})
-
-          console.log(data)
         })
       }).catch(error => {
         console.log(error);
@@ -231,7 +224,6 @@ class Budgets extends React.Component {
 
   numberValidator = e => {
     if (this.state.partidas_presupuestarias_partida.includes(',') && !(this.state.partidas_presupuestarias_partida === "")){
-      // console.log('includes')
     } else {
       const partidas = this.state.partidas_presupuestarias_partida.concat(",00");
       this.setState({
@@ -241,7 +233,6 @@ class Budgets extends React.Component {
   }
 
   sendTotal(total){
-    // console.log(total);
     if(total !== undefined){
       this.setState({
         partidas_presupuestarias_cc: total.replace('.', ',')

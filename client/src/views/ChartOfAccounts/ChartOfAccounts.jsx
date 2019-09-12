@@ -28,29 +28,12 @@ import { serverUrl } from "variables/general";
 import axios from "axios";
 
 const styles = theme => ({
-  root: {
-    width: "100%"
-  },
-  grow: {
-    flexGrow: 1
-  },
-  appBar: {
-    backgroundColor: "#00acc1"
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20
-  },
   title: {
     display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block"
     }
-  },
-  inputRoot: {
-    color: "inherit",
-    width: "100%"
-  },
+  }
 });
 
 class ChartOfAccounts extends React.Component {
@@ -72,8 +55,6 @@ class ChartOfAccounts extends React.Component {
       empresa_separador_cc: "",
       open: false,
       answer: false
-      // fullWidth: true,
-      // maxWidth: "sm"
     };
 
     this.onChange = this.onChange.bind(this);
@@ -100,8 +81,6 @@ class ChartOfAccounts extends React.Component {
     const company = localStorage.getItem("company");
     const db = localStorage.getItem("db");
     const jsonComp = JSON.parse(company);
-
-    // console.log(localStorage.getItem("selected"));
 
     const format = jsonComp.empresa_mascara_pc;
     const mask = "#";
@@ -241,7 +220,6 @@ class ChartOfAccounts extends React.Component {
           alert("Ingrese un codigo correcto");
         }
 
-        // (result);
         if(result === "Crear"){
           const newChart = {
             plan_de_cuentas_cod: actualValue,

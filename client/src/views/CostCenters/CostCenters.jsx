@@ -262,7 +262,7 @@ class CostCenters extends React.Component {
           };
 
           // alert(result);
-          console.log(newCC)
+          console.log(newCC);
           createCC(newCC).then(res => {
             console.log('👉 Returned data:', res);
             window.location.reload();

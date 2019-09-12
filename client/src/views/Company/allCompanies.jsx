@@ -25,10 +25,7 @@ import { dropTable2, createTable2, deleteCompany, updateComp } from "services/co
 
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-// import { baseUrl } from "variables/general";
-// import CircularProgress from '@material-ui/core/CircularProgress';
 import LinearProgress from '@material-ui/core/LinearProgress';
-// import { getToken } from "../../services/token/token";
 import { companiesTaken, companyData } from "../../services/company/company";
 import { userCreator, userPermissions } from "../../services/user/user";
 import { userAcc, deleteAllUsers, deleteUser } from "../../services/user/useracc";
@@ -143,7 +140,6 @@ class allCompanies extends React.Component {
               const element = accesos[index];
               if (element === "1") {
                 console.log('post', element);
-                // this.setState({ disabled: false });
               } else if (element === "2") {
                 console.log('put', element);
                 this.setState({ put: false });
@@ -221,28 +217,6 @@ class allCompanies extends React.Component {
   }
 
   deleteItem(item) {
-    //-------------------------------------------------------
-
-    //USUARIOS REGISTRADOS EN LA BASE DE DATOS SELECCIONADA
-    // const filter = this.state.array.filter(i => i.user.usuario_acceso_empresa === item.database);
-    // console.log('Usuarios a eliminar de '+item.database,filter);
-
-    // //USUARIOS EXISTENTES EN OTRAS BASE DE DATOS
-    // var result = Object.values(this.state.array.reduce((c,v) =>{
-    //   let k = v.user.usuario_nombre;
-    //   c[k] = c[k] || [];
-    //   c[k].push(v);
-    //   return c;
-    // }, {}));
-
-    // //USUARIOS QUE NO SE PUEDEN ELIMINAR DE WEBUSUARIO
-    // const users_from_c2 = result.reduce((c, v) => v.length > 1 ? c.concat(v) : c, []).filter(i => i.user.usuario_acceso_empresa === item.database);  
-
-    // if (users_from_c2.length > 1){
-    //   console.log('No puede eliminar de webusuario', users_from_c2);
-    // } else {
-    //   console.log('No hay usuarios');
-    // }
 
     confirmAlert({
       title: 'Confirmar',
@@ -460,7 +434,6 @@ class allCompanies extends React.Component {
     data.databases = selected;
 
     companyData(data).then(data => {
-      // console.log(data, JSON.stringify(data), data.empresa_des);
       this.setState({ compSelected: true });
       localStorage.setItem("selected", true);
       localStorage.setItem("db", selected);
