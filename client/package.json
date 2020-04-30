@@ -17,7 +17,7 @@
     "braces": "^2.3.2",
     "chartist": "0.10.1",
     "classnames": "2.2.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-yaml": "^3.13.1",
     "jwt-decode": "^2.2.0",
     "mem": "^5.1.1",
