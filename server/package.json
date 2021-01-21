@@ -43,6 +43,6 @@
     "reverse-md5": "0.0.4",
     "sequelize": "^5.10.1",
     "session-memory-store": "^1.0.0",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.4.0"
   }
 }
