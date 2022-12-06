@@ -27,7 +27,7 @@
     "perfect-scrollbar": "1.4.0",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
-    "qs": "^6.8.0",
+    "qs": "^6.8.3",
     "querystring": "^0.2.0",
     "react": "^16.9.0",
     "react-chartist": "0.13.1",
